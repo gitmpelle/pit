@@ -1,6 +1,6 @@
 # Complete project details at https://RandomNerdTutorials.com
 # import boot
-rev = '070124-002'
+rev = '070124-003'
 from machine import Pin, ADC
 from time import sleep,sleep_ms
 import time, json
