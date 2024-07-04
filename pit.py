@@ -14,8 +14,8 @@ start = 0
 startTmr = 5
 led = Pin(2, Pin.OUT)
 swStart = Pin(23, Pin.OUT)
-pwr = Pin(4, mode = Pin.IN, pull = Pin.PULL_UP)
-rain = Pin(16, mode = Pin.IN, pull = Pin.PULL_UP)
+pwr = Pin(16, mode = Pin.IN, pull = Pin.PULL_UP)
+rain = Pin(4, mode = Pin.IN, pull = Pin.PULL_UP)
 motor=Servo(pin=22) # A changer selon la broche utilisée
 
 pot = ADC(Pin(34))
