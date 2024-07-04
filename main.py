@@ -92,7 +92,7 @@ print(f"{getTime()} {gc.threshold(gc.mem_free() // 4 + gc.mem_alloc())}")
 gc.collect()
 # Non-blocking wait for message
 
-pwr.irq(trigger=Pin.IRQ_RISING, handler=zero_handle_interrupt)
+#pwr.irq(trigger=Pin.IRQ_RISING, handler=zero_handle_interrupt)
 rain.irq(trigger=Pin.IRQ_RISING, handler=rain_handle_interrupt)
 
 def startGen():
