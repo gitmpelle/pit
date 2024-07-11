@@ -1,7 +1,7 @@
 # Complete project details at https://RandomNerdTutorials.com
 # import boot
-rev = '070124-004'
-from machine import Pin, ADC
+rev = '071024-001'
+from machine import Pin, ADC, WDT
 from time import sleep,sleep_ms
 import time, json
 import ntptime
@@ -139,10 +139,12 @@ rc = machine.reset_cause()
 print('Reset Cause = ', rc)
 wlan_mac = station.config('mac')
 mac = ubinascii.hexlify(wlan_mac).decode().upper()
-
+wdt = WDT(timeout=6000)  # enable it with a timeout of 6s
+wdt.feed()
 while True:
   try:
-    gc.collect()  
+    gc.collect()
+    wdt.feed()      
     client.check_msg()
     if (time.time() - last_message) > message_interval or Rain:
         rainmsg = 0
